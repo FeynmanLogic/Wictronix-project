@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG DUMMY|<%= title%></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs')%>
+    <%- include('./partials/head.ejs')%>
+    <div class="container">
+<a href="/"><h2>Blogs by D</h2></a><br>
+
+    </div>
+    
+    <div class="container">
+<h2>ALL BLOGS:</h2>
+        <% if(blogs.length>0){%>
+            <%blogs.forEach(blog=>{%>
+                <h3 class="title"><%=blog.title%></h3>
+                    <p class="snippet"><%=blog.snippet%></p>
+            <%})%>
+            <%}else{%>
+            
+                <p>There are no blogs to display</p>
+                <%}%>
+    </div>
+    <%- include('./partials/footer.ejs')%>
+
+</body>
+</html>
